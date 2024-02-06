@@ -1,25 +1,17 @@
 package alessiaPalmieri.demo.entities;
 
-public class Drinks extends Food {
-    private String drinkName;
+public class Drinks extends FoodMenu {
+    private double quantity;
 
-    public Drinks(double kalories, double price, String drinkName) {
-        super(kalories, price);
-        this.drinkName = drinkName;
-    }
-
-    public String getDrinkName() {
-        return drinkName;
-    }
-
-    public void setDrinkName(String drinkName) {
-        this.drinkName = drinkName;
+    public Drinks(String name, double kcal, double price, double quantity) {
+        super(name, kcal, price);
+        this.quantity = quantity;
     }
 
     @Override
     public String toString() {
-        return "Drinks{" +
-                "drinkName='" + drinkName + '\'' +
+        return "Drinks{" + this.getName() +
+                "quantity=" + quantity + "l" +
                 '}';
     }
 }

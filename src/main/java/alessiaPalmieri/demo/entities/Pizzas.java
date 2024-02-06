@@ -1,27 +1,25 @@
 package alessiaPalmieri.demo.entities;
 
 
+import lombok.Getter;
+import lombok.Setter;
 
-public class Pizzas extends Food {
-    private String margherita;
+import java.util.List;
 
-    public Pizzas(double kalories, double price, String margherita) {
-        super(kalories, price);
-        this.margherita = margherita;
-    }
+@Getter
+@Setter
+public class Pizzas extends FoodMenu {
+   private List<Toppings> ingredients;
 
-    public String getMargherita() {
-        return margherita;
-    }
-
-    public void setMargherita(String margherita) {
-        this.margherita = margherita;
+    public Pizzas(String name, double kcal, double price, List<Toppings> ingredients) {
+        super(name, kcal, price);
+        this.ingredients = ingredients;
     }
 
     @Override
     public String toString() {
-        return "Pizzas{" +
-                "margherita='" + margherita + '\'' +
+        return "Pizzas {" +
+                "ingredients=" + ingredients +
                 '}';
     }
 }
